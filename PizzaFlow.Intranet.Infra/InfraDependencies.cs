@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿
 using Microsoft.Extensions.DependencyInjection;
-using PizzaFlow.Intranet.Business.Areas.Home;
-using PizzaFlow.Intranet.Business.Areas.Home.Interfaces;
 using PizzaFlow.Intranet.Business.PizzaFlowBase;
 using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository;
 using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces;

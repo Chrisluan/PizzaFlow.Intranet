@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PizzaFlow.Intranet.Business\PizzaFlow.Intranet.Business.csproj" />
     <ProjectReference Include="..\PizzaFlow.Intranet.Infra\PizzaFlow.Intranet.Infra.csproj" />
   </ItemGroup>
 

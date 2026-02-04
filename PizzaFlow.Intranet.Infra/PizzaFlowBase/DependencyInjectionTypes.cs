@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using PizzaFlow.Intranet.Business.Areas.Home;
-using PizzaFlow.Intranet.Business.Areas.Home.Interfaces;
 
 namespace PizzaFlow.Intranet.Business.PizzaFlowBase
 {
