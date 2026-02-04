@@ -1,0 +1,14 @@
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\bin\Debug\net9.0\PizzaFlow.Intranet.Business.deps.json
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\bin\Debug\net9.0\PizzaFlow.Intranet.Business.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\bin\Debug\net9.0\PizzaFlow.Intranet.Business.pdb
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.csproj.AssemblyReference.cache
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.AssemblyInfoInputs.cache
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.AssemblyInfo.cs
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.csproj.CoreCompileInputs.cache
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\refint\PizzaFlow.Intranet.Business.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.pdb
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\ref\PizzaFlow.Intranet.Business.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\bin\Debug\net9.0\PizzaFlow.Intranet.Business.runtimeconfig.json
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Business\obj\Debug\net9.0\PizzaFlow.Intranet.Business.genruntimeconfig.cache

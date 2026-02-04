@@ -1,0 +1,12 @@
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.AssemblyInfoInputs.cache
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.AssemblyInfo.cs
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.csproj.CoreCompileInputs.cache
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\bin\Debug\net9.0\PizzaFlow.Intranet.Models.deps.json
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\bin\Debug\net9.0\PizzaFlow.Intranet.Models.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\bin\Debug\net9.0\PizzaFlow.Intranet.Models.pdb
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\refint\PizzaFlow.Intranet.Models.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.pdb
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\ref\PizzaFlow.Intranet.Models.dll
+C:\Users\quase\source\repos\PizzaFlow.Intranet.Models\obj\Debug\net9.0\PizzaFlow.Intranet.Models.csproj.AssemblyReference.cache
