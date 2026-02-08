@@ -10,7 +10,7 @@ namespace PizzaFlow.Intranet.Infra
     {
         public Database(DbContextOptions<Database> options) : base(options){}
 
-        public DbSet<Cliente> Clientes { get; set; } = default!;
+        public DbSet<Cliente> Clientes { get; set; }
         
     }
 }

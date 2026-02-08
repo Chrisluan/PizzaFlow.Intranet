@@ -10,7 +10,7 @@ namespace PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces
     public interface IDataRepository<T> where T : class
     {
         Task<T?> GetByIdAsync(int id);
-        Task<IEnumerable<T>> GetAllAsync();
+        IQueryable<T> Query();
         Task AddAsync(T entity);
         void Update(T entity);
         void Delete(T entity);

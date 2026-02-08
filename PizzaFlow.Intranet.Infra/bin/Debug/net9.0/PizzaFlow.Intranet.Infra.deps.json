@@ -14,7 +14,6 @@
           "Microsoft.EntityFrameworkCore.Design": "9.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
-          "PizzaFlow.Intranet.Business": "1.0.0",
           "PizzaFlow.Intranet.Models": "1.0.0",
           "Unity": "5.11.10"
         },
@@ -1772,17 +1771,6 @@
           }
         }
       },
-      "PizzaFlow.Intranet.Business/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "9.0.0"
-        },
-        "runtime": {
-          "PizzaFlow.Intranet.Business.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
       "PizzaFlow.Intranet.Models/1.0.0": {
         "dependencies": {
           "FluentNHibernate": "3.4.1"
@@ -2900,11 +2888,6 @@
       "sha512": "sha512-B4+Ps3oqI78hJ+dAFsJhPkJT6qycsNExgLbtw7CEHSzKc2ac3YyUR8SHQ+ZyTwld/y5IbDx/aNOHnKE9Em1zWA==",
       "path": "unity/5.11.10",
       "hashPath": "unity.5.11.10.nupkg.sha512"
-    },
-    "PizzaFlow.Intranet.Business/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "PizzaFlow.Intranet.Models/1.0.0": {
       "type": "project",

@@ -1,29 +1,43 @@
-﻿
-using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces;
+﻿using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces;
+using PizzaFlow.Intranet.Infra.PizzaFlowBase.CustomExceptions;
 using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Models.Clientes;
 using PizzaFlow.Intranet.Models.Pedidos;
-namespace PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository
+
+public class ClientesRepository : IClientesRepository
 {
-    public class ClientesRepository : IClientesRepository
+    private readonly IDataRepository<Cliente> clienteDataRepository;
+
+    public ClientesRepository(
+        IDataRepository<Cliente> clienteDataRepository,
+        IDataRepository<Pedido> pedidoDataRepository)
     {
-        private readonly IDataRepository<Cliente> clienteDataRepository;
-        private readonly IDataRepository<Pedido> pedidoDataRepository;
-        public ClientesRepository(IDataRepository<Cliente> clienteDataRepository, IDataRepository<Pedido> pedidoDataRepository) {
-            this.clienteDataRepository = clienteDataRepository;
-            this.pedidoDataRepository = pedidoDataRepository;
-
-        }
-        public void CadastrarNovoCliente(Cliente cliente) => clienteDataRepository.AddAsync(cliente);
-
-        public IEnumerable<Pedido> PegarHistoricoDePedidoClientePorId(int idCliente) {
-            var pedidos = pedidoDataRepository.GetAllAsync().Result.Where(c => c.ClienteId == idCliente);
-            return pedidos;
-        }
-
-        public Cliente ProcurarClientePorId(int id)
-        {
-            
-        }
+        this.clienteDataRepository = clienteDataRepository;
     }
+
+    public async Task<Cliente?> ProcurarClientePorId(int id)
+    {
+        return await clienteDataRepository.GetByIdAsync(id);
+    }
+
+    public async Task CadastrarNovoCliente(Cliente cliente)
+    {
+        await clienteDataRepository.AddAsync(cliente);
+        await clienteDataRepository.SaveChangesAsync();
+    }
+
+    public async Task<bool> Deletar(int id)
+    {
+        var cliente = await clienteDataRepository.GetByIdAsync(id);
+        clienteDataRepository.Delete(cliente);
+        await clienteDataRepository.SaveChangesAsync();
+
+        return true;
+    }
+    public IQueryable<Cliente> QueryClientes()
+    {
+        return clienteDataRepository.Query();
+
+    }
+
 }

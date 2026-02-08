@@ -17,17 +17,28 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
         public void CadastrarNovoCliente(Cliente cliente)
         {
             dataRepository.CadastrarNovoCliente(cliente);
-            throw new NotImplementedException();
+           
         }
 
-        public IEnumerable<Pedido> PegarHistoricoDePedidoPorId(int id)
+        public Task<bool> Deletar(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Cliente ProcurarClientePorId(int id)
+        public Task<IEnumerable<Pedido>> PegarHistoricoDePedidoPorId(int id)
         {
             throw new NotImplementedException();
         }
+
+        public Task<Cliente?> ProcurarClientePorId(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<Cliente>> RetornarTodos(int inicio = 0, int? maximo = 0)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

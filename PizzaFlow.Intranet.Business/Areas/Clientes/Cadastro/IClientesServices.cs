@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
 {
-    internal interface IClientesServices : IClientesRepository
+    public interface IClientesServices
     {
     }
 }

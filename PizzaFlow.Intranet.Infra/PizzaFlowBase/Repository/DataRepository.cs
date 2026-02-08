@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Infra;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzaFlow.Intranet.Business.PizzaFlowBase.Repository
 {
@@ -20,11 +15,11 @@ namespace PizzaFlow.Intranet.Business.PizzaFlowBase.Repository
             _dbSet = context.Set<T>();
         }
 
+        public IQueryable<T> Query()
+            => _dbSet.AsNoTracking();
+
         public async Task<T?> GetByIdAsync(int id)
             => await _dbSet.FindAsync(id);
-
-        public async Task<IEnumerable<T>> GetAllAsync()
-            => await _dbSet.ToListAsync();
 
         public async Task AddAsync(T entity)
             => await _dbSet.AddAsync(entity);
@@ -38,5 +33,4 @@ namespace PizzaFlow.Intranet.Business.PizzaFlowBase.Repository
         public async Task SaveChangesAsync()
             => await _context.SaveChangesAsync();
     }
-
 }

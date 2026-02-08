@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository;
+using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 
 namespace PizzaFlow.Intranet.Business.PizzaFlowBase
 {
@@ -6,7 +8,7 @@ namespace PizzaFlow.Intranet.Business.PizzaFlowBase
     {
         public static void RegisterTypes(IServiceCollection services)
         {
-            
+            services.AddScoped<IClientesRepository,ClientesRepository>();
         }
     }
 }

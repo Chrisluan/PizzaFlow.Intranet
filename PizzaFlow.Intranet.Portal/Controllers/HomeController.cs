@@ -1,7 +1,4 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PizzaFlow.Intranet.Business.Areas.Home.Interfaces;
-using PizzaFlow.Intranet.Models;
 
 namespace PizzaFlow.Intranet.Controllers
 {
