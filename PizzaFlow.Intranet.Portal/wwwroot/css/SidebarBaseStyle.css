@@ -1,0 +1,161 @@
+﻿:root {
+    /* ===== CORES ===== */
+    --color-bg-body: #121212;
+    --color-bg-sidebar: #1a1a1a;
+    --color-bg-hover: #2a2a2a;
+    --color-bg-hover-sub: #242424;
+    --color-bg-active: #6c63ff;
+    --color-bg-debug: blanchedalmond;
+    --color-border-sidebar: #2a2a2a;
+    --color-text-primary: #ffffff;
+    --color-text-default: #e0e0e0;
+    --color-text-muted: #9a9a9a;
+    --color-text-menu: #cfcfcf;
+    --color-text-submenu: #bdbdbd;
+    /* ===== FONTES ===== */
+    --font-family-base: "Segoe UI", Tahoma, sans-serif;
+    /* ===== TAMANHOS DE FONTE ===== */
+    --font-size-logo: 18px;
+    --font-size-category: 13px;
+    --font-size-menu: 14px;
+    --font-size-base: 16px;
+    /* ===== ESPAÇAMENTOS ===== */
+    --sidebar-width: 350px;
+    --radius-default: 0px;
+}
+body {
+    margin: 0;
+    background: var(--color-bg-body);
+    color: var(--color-text-default);
+    font-family: var(--font-family-base);
+}
+
+/* Layout geral */
+.layout {
+    list-style: none;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.side-bar {
+    list-style: none;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--color-bg-sidebar);
+    border-right: 1px solid var(--color-border-sidebar);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* Logo */
+    .side-bar .logo {
+        font-size: var(--font-size-logo);
+        font-weight: 600;
+        color: var(--color-text-primary);
+        margin-bottom: 24px;
+    }
+
+    /* Menu */
+    .side-bar > ul.sidebar {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+/* Categoria */
+.sidebar-category {
+    margin-bottom: 16px;
+}
+
+    .sidebar-category > span {
+        display: block;
+        font-size: var(--font-size-category);
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-text-muted);
+        margin-bottom: 8px;
+    }
+
+/* Item */
+.menu-item {
+    list-style: none;
+   
+}
+
+    /* Link principal */
+    .menu-item > a {
+
+        left:50px;
+        display: flex;
+        align-items: center;
+        padding: 10px 10px;
+        border-radius: var(--radius-default);
+        color: var(--color-text-menu);
+        text-decoration: none;
+        cursor: pointer;
+        
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+        .menu-item > a:hover {
+            background: var(--color-bg-hover);
+            color: var(--color-text-primary);
+        }
+
+/* Submenu */
+.submenu {
+    
+    margin-top: 4px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: var(--color-bg-hover-sub);
+}
+
+/* Submenu aberto */
+.menu-item.open > .submenu {
+    max-height: 300px;
+}
+.menu-item.open{
+    background-color: var(--color-bg-hover)
+}
+
+/* Item do submenu */
+.submenu .menu-item > a {
+
+
+    margin-left:15px;
+    box-sizing:border-box;
+    font-size: var(--font-size-menu);
+    color: var(--color-text-submenu);
+}
+    .submenu .menu-item > a:hover {
+        background: var(--color-bg-hover);
+        color: var(--color-text-primary);
+    }
+
+/* Item ativo */
+.menu-item > a.active {
+    background: var(--color-bg-active);
+    color: var(--color-text-primary);
+}
+
+/* Seta */
+.arrow {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    transition: transform 0.25s ease;
+}
+
+.menu-item.open > a .arrow {
+    transform: rotate(180deg);
+}
+
+/* Conteúdo */
+.content {
+    flex: 1;
+    padding: 24px;
+}

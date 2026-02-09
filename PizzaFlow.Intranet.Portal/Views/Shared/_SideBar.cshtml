@@ -1,0 +1,33 @@
+﻿<link rel="stylesheet" href="~/css/SidebarBaseStyle.css" asp-append-version="true" />
+
+
+<div class="logo">
+    PizzaFlow
+</div>
+    @Html.CriarMenu(menu =>
+    {
+    menu.Categoria("Fluxo Diário", "fa-solid fa-arrow-right-arrow-left")
+            .Item("Caixa", "fa fa-dollar")
+                .VaiPara("Clientes", "Index")
+            .Item("Pedido", "fa-solid fa-pizza-slice")
+                .Sub("Novo", "Pedido", "Novo", "fa-solid fa-plus")
+                .Sub("Em preparação", "Pedido", "Abertos", "fa-solid fa-circle-half-stroke")
+                .Sub("Finalizados", "Pedido", "Finalizados", "fa-solid fa-circle")
+                .Sub("Cancelados", "Pedido", "Cancelados", "fa-solid fa-circle-xmark")
+                .Sub("Histórico", "Pedido", "Historico", "fa-solid fa-clock-rotate-left");
+
+    menu.Categoria("Gestão", "fa fa-pizza-slice")
+        .Item("Clientes", "fa fa-user")
+            .Sub("Cadastrar", "Produtos", "Create", "fa fa-plus")
+            .VaiPara("Clientes", "Index")
+        .Item("Insumos", "fa fa-box")
+            .Sub("Cadastrar", "Insumos", "Create", "fa fa-plus")
+        .Sub("Listar", "Produtos", "Index", "fa-solid fa-table-list");
+    })
+
+<footer>
+    @{
+        var time = DateTime.Now;
+    }
+    @time - v1.0.0
+</footer>

@@ -11,7 +11,10 @@ namespace PizzaFlow.Intranet.Controllers
             
             _logger = logger;
         }
-
+        public IActionResult Privacy()
+        {
+            return View("Privacy");
+        }
         public IActionResult Index()
         {
             return View();

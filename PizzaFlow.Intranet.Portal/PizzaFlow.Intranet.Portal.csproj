@@ -19,4 +19,13 @@
     <ProjectReference Include="..\PizzaFlow.Intranet.Infra\PizzaFlow.Intranet.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Shared\Styles\" />
+    <Folder Include="wwwroot\theme\light\css\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\SidebarBaseStyle.css" />
+  </ItemGroup>
+
 </Project>
