@@ -1,16 +1,16 @@
 ﻿:root {
     /* Cores base */
-    --color-bg: #121212;
-    --color-bg-secondary: #1e1e1e;
-    --color-bg-hover: #1a1a1a;
-    --color-border: #2c2c2c;
+    --color-bg: #f4f6f9;
+    --color-bg-secondary: #ffffff;
+    --color-bg-hover: #f1f3f6;
+    --color-border: #dcdfe6;
     --color-border-focus: #6c63ff;
-    --color-text: #e0e0e0;
+    --color-text: #2c2c2c;
     --color-text-white: #ffffff;
     --color-primary: #6c63ff;
     --color-primary-hover: #5a52d6;
-    --color-secondary: #2c2c2c;
-    --color-secondary-hover: #3a3a3a;
+    --color-secondary: #e4e6eb;
+    --color-secondary-hover: #d6d8dd;
     /* Layout */
     --container-max-width: 1200px;
     --border-radius-sm: 6px;
@@ -26,6 +26,7 @@
     /* Transições */
     --transition-fast: 0.2s ease;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -34,35 +35,39 @@
 }
 
 body {
-    
     background-color: var(--color-bg);
     color: var(--color-text);
     min-height: 100vh;
     font-size: var(--font-size-base);
 }
+
 .container {
     width: 100%;
     max-width: var(--container-max-width);
     margin: auto;
     padding: var(--spacing-lg);
 }
+
 header {
     background: var(--color-bg-secondary);
     padding: var(--spacing-md) 24px;
     border-bottom: 1px solid var(--color-border);
 }
 
-header h1 {
-    font-size: var(--font-size-title);
-    color: var(--color-text-white);
-}
+    header h1 {
+        font-size: var(--font-size-title);
+        color: var(--color-text);
+    }
+
 .card {
-    background: var(--color-bg-secondary);
+    background: linear-gradient(180deg, #ffffff, #f9fafc);
     border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-md);
-    padding: var(--spacing-lg);
+    border-radius: 10px;
+    padding: 28px;
     margin-bottom: var(--spacing-md);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
 }
+
 button,
 .btn {
     background: var(--color-primary);
@@ -80,8 +85,10 @@ button,
     .btn:hover {
         background: var(--color-primary-hover);
     }
+
 .btn-secondary {
     background: var(--color-secondary);
+    color: var(--color-text);
 }
 
     .btn-secondary:hover {
@@ -91,12 +98,13 @@ button,
 input,
 select,
 textarea {
-    background: var(--color-bg-hover);
-    color: var(--color-text-white);
+    background: #ffffff;
+    color: var(--color-text);
     border: 1px solid var(--color-border);
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     width: 100%;
+    transition: border var(--transition-fast), box-shadow var(--transition-fast);
 }
 
     input:focus,
@@ -104,16 +112,20 @@ textarea {
     textarea:focus {
         outline: none;
         border-color: var(--color-border-focus);
+        box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.15);
     }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: var(--spacing-md);
+    background: #ffffff;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
 }
 
 th {
-    background: var(--color-bg-secondary);
+    background: var(--color-bg-hover);
     text-align: left;
     padding: 12px;
     border-bottom: 1px solid var(--color-border);
@@ -125,8 +137,9 @@ td {
 }
 
 tr:hover {
-    background: var(--color-bg-hover);
+    background: #f7f8fb;
 }
+
 footer {
     background: var(--color-bg-secondary);
     padding: var(--spacing-md);
@@ -134,38 +147,34 @@ footer {
     border-top: 1px solid var(--color-border);
     margin-top: 40px;
 }
+
 a {
     color: var(--color-primary);
     text-decoration: none;
 }
 
-a:hover {
+    a:hover {
         text-decoration: underline;
-}
-
-.card {
-    background: linear-gradient(180deg, #1f1f1f, #191919);
-    border-radius: 10px;
-    padding: 28px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
+    }
 
 .form-styled {
-    background: #1a1a1a;
+    background: #ffffff;
     padding: 20px;
     border-radius: 12px;
+    border: 1px solid var(--color-border);
 }
 
 .form-styled-body {
-    background: #222;
+    background: #f9fafc;
     padding: 20px;
     border-radius: 12px;
+    border: 1px solid var(--color-border);
 }
 
 .form-group {
     margin-bottom: 16px;
 }
-.title{
-   margin-bottom:20px
+
+.title {
+    margin-bottom: 20px;
 }

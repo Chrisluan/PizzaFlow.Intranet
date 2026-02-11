@@ -8,5 +8,9 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Pedidos
         {
             return View("Pedidos");
         }
+        public IActionResult NovoPedido()
+        {
+            return View("NovoPedido");
+        }
     }
 }

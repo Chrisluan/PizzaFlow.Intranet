@@ -1,0 +1,12 @@
+﻿@using PizzaFlow.Intranet.Portal.Extensions.UI.Form
+@model PizzaFlow.Intranet.Models.Clientes.Cliente;
+
+@using (Html.BeginFormStyled("Novo cliente", "Salvar", "Clientes", FormMethod.Post))
+{
+    @Html.InputFor(m => m.Nome)
+
+    @Html.InputFor(m => m.NumeroTelefone)
+    @Html.InputFor(m => m.DataNascimento)
+    @Html.InputFor(m => m.Endereco)
+   
+}

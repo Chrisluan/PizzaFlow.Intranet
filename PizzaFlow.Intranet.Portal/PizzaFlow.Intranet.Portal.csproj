@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.3.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -17,11 +18,11 @@
   <ItemGroup>
     <ProjectReference Include="..\PizzaFlow.Intranet.Business\PizzaFlow.Intranet.Business.csproj" />
     <ProjectReference Include="..\PizzaFlow.Intranet.Infra\PizzaFlow.Intranet.Infra.csproj" />
+    <ProjectReference Include="..\PizzaFlow.Intranet.Models\PizzaFlow.Intranet.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\Shared\Styles\" />
-    <Folder Include="wwwroot\theme\light\css\" />
   </ItemGroup>
 
   <ItemGroup>
