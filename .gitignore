@@ -1,3 +1,9 @@
-.git
-.github
-.vs
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.dll
+*.exe
+*.pdb
+*.log
