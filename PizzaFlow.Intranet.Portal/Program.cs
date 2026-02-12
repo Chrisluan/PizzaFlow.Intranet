@@ -17,6 +17,7 @@ builder.Services.AddDbContext<Database>(options =>
     )
 );
 builder.Services.StartRegister();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 var app = builder.Build();

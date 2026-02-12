@@ -48,8 +48,8 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
 
                     </div>
 
-                    <div style=""margin-top:20px;display:block;position:relative;right:0;"">
-                        <button type=""button"">Cancelar</button>
+                    <div style=""margin-top: var(--spacing-md); text-align:right"">
+                        <button class=""btn-secondary"" type=""button"">Cancelar</button>
                         <button type=""submit"">Confirmar</button>
                     </div>
 

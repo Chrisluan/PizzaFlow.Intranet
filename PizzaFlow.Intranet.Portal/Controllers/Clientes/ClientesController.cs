@@ -1,15 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using NHibernate.Mapping.ByCode.Impl;
 using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Models.Clientes;
 using PizzaFlow.Intranet.Models.Produtos;
+using PizzaFlow.Intranet.ViewModels.Clientes;
 
 namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
 {
     public class ClientesController : Controller
     {
         private readonly IClientesRepository _clientesRepository;
-        public ClientesController(IClientesRepository clientesRepository)
+        private readonly IMapper _mapper;
+        public ClientesController(IClientesRepository clientesRepository, IMapper mapper)
         {
+            _mapper = mapper;
             _clientesRepository = clientesRepository;
         }
         public IActionResult Index()
@@ -22,11 +27,14 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
             return View("CadastrarCliente");
         }
       
-        public IActionResult Salvar(Cliente cliente)
+        public IActionResult Salvar(ClienteViewModel cliente)
         {
-            _clientesRepository.CadastrarNovoCliente(cliente);
+            if (ModelState.IsValid)
+                return View("CadastrarCliente", cliente);
+            var clienteModel = _mapper.Map<ClienteViewModel, Cliente>(cliente);
+            _clientesRepository.CadastrarNovoCliente(clienteModel);
 
-            return View("CadastrarCliente");
+            return View("CadastrarCliente", null);
         }
     }
 }
