@@ -1,13 +1,14 @@
+# Build
 bin/
 obj/
+
+# Visual Studio
 .vs/
 *.user
 *.suo
+
+# Output
 *.dll
 *.exe
 *.pdb
 *.log
-/PizzaFlow.Intranet.Infra/bin
-/PizzaFlow.Intranet.Infra/bin
-/PizzaFlow.Intranet.Infra/bin
-/PizzaFlow.Intranet.Infra/bin/Debug/net9.0
