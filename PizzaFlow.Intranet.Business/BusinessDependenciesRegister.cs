@@ -11,7 +11,7 @@ namespace PizzaFlow.Intranet.Business
 
         public static IServiceCollection StartRegister(this IServiceCollection services)
         {
-            InfraDependencies.RegisterInfra(services);
+            InfraDependencies.AddInfra(services);
             RegisterBusiness(services);
             return services;
         }

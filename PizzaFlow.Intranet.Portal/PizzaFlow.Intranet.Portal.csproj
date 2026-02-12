@@ -17,8 +17,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PizzaFlow.Intranet.Business\PizzaFlow.Intranet.Business.csproj" />
-    <ProjectReference Include="..\PizzaFlow.Intranet.Infra\PizzaFlow.Intranet.Infra.csproj" />
     <ProjectReference Include="..\PizzaFlow.Intranet.Models\PizzaFlow.Intranet.Models.csproj" />
+    <ProjectReference Include="..\PizzaFlow.Intranet.ViewModels\PizzaFlow.Intranet.ViewModels.csproj" />
   </ItemGroup>
 
   <ItemGroup>

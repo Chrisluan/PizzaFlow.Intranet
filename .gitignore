@@ -7,3 +7,7 @@ obj/
 *.exe
 *.pdb
 *.log
+/PizzaFlow.Intranet.Infra/bin
+/PizzaFlow.Intranet.Infra/bin
+/PizzaFlow.Intranet.Infra/bin
+/PizzaFlow.Intranet.Infra/bin/Debug/net9.0

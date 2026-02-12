@@ -1,5 +1,4 @@
 ﻿using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces;
-using PizzaFlow.Intranet.Infra.PizzaFlowBase.CustomExceptions;
 using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Models.Clientes;
 using PizzaFlow.Intranet.Models.Pedidos;
@@ -15,22 +14,25 @@ public class ClientesRepository : IClientesRepository
         this.clienteDataRepository = clienteDataRepository;
     }
 
-    public async Task<Cliente?> ProcurarClientePorId(int id)
+    public Cliente? ProcurarClientePorId(int id)
     {
-        return await clienteDataRepository.GetByIdAsync(id);
+        return clienteDataRepository.GetById(id);
     }
 
-    public async Task CadastrarNovoCliente(Cliente cliente)
+    public void CadastrarNovoCliente(Cliente cliente)
     {
-        await clienteDataRepository.AddAsync(cliente);
-        await clienteDataRepository.SaveChangesAsync();
+        clienteDataRepository.Add(cliente);
+        clienteDataRepository.SaveChanges();
     }
 
-    public async Task<bool> Deletar(int id)
+    public bool Deletar(int id)
     {
-        var cliente = await clienteDataRepository.GetByIdAsync(id);
+        var cliente = clienteDataRepository.GetById(id);
+        if (cliente == null)
+            return false;
+
         clienteDataRepository.Delete(cliente);
-        await clienteDataRepository.SaveChangesAsync();
+        clienteDataRepository.SaveChanges();
 
         return true;
     }

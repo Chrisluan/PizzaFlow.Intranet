@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using PizzaFlow.Intranet.Business;
 using PizzaFlow.Intranet.Infra;
 using System;
 var builder = WebApplication.CreateBuilder(args);
@@ -15,7 +16,7 @@ builder.Services.AddDbContext<Database>(options =>
         b => b.MigrationsAssembly("PizzaFlow.Intranet.Infra")
     )
 );
-builder.Services.AddInfra();
+builder.Services.StartRegister();
 
 
 var app = builder.Build();

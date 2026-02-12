@@ -20,22 +20,22 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
            
         }
 
-        public Task<bool> Deletar(int id)
+        public bool Deletar(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Pedido>> PegarHistoricoDePedidoPorId(int id)
+        public IEnumerable<Pedido> PegarHistoricoDePedidoPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Cliente?> ProcurarClientePorId(int id)
+        public Cliente? ProcurarClientePorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Cliente>> RetornarTodos(int inicio = 0, int? maximo = 0)
+        public IEnumerable<Cliente> RetornarTodos(int inicio = 0, int? maximo = 0)
         {
             throw new NotImplementedException();
         }

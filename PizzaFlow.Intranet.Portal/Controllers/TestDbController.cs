@@ -32,23 +32,7 @@ namespace PizzaFlow.Intranet.Portal.Controllers
             return Ok(new {cliente});
         }
 
-        [Route("cadastrar")]
-        [HttpPost]
-        public async Task<IActionResult> Cadastrar([FromBody] Cliente cliente)
-        {
-            await clientesRepository.CadastrarNovoCliente(cliente);
-            return Ok(new { cliente });
-        }
-        [HttpDelete("deletar/{cliente}")]
-        public async Task<IActionResult> Deletar(int cliente)
-        {
-            var resultado = await clientesRepository.Deletar(cliente);
-
-            if (!resultado)
-                return NotFound(new { mensagem = "Cliente não encontrado" });
-
-            return Ok(new {resultado});
-        }
+       
 
 
     }

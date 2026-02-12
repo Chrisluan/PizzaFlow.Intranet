@@ -22,11 +22,9 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
             return View("CadastrarCliente");
         }
       
-        public async Task<IActionResult> Salvar(Cliente cliente)
+        public IActionResult Salvar(Cliente cliente)
         {
-            cliente.Handle = Guid.NewGuid().ToString();
-            await _clientesRepository.CadastrarNovoCliente(cliente);
-
+            _clientesRepository.CadastrarNovoCliente(cliente);
 
             return View("CadastrarCliente");
         }

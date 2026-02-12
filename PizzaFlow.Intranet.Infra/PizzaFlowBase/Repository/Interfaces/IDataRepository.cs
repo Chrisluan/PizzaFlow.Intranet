@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,12 +8,12 @@ namespace PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces
 {
     public interface IDataRepository<T> where T : class
     {
-        Task<T?> GetByIdAsync(int id);
+        T? GetById(int id);
         IQueryable<T> Query();
-        Task AddAsync(T entity);
+        void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-        Task SaveChangesAsync();
+        void SaveChanges();
     }
 
 }
