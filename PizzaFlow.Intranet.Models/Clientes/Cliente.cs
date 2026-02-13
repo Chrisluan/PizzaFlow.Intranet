@@ -1,8 +1,4 @@
-﻿using FluentNHibernate.Automapping;
-using PizzaFlow.Intranet.Models.Pedidos;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
+﻿
 
 namespace PizzaFlow.Intranet.Models.Clientes
 {

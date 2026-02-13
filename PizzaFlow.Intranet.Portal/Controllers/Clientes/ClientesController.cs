@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using NHibernate.Mapping.ByCode.Impl;
+using PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro;
 using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Models.Clientes;
 using PizzaFlow.Intranet.Models.Produtos;
@@ -10,12 +11,12 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
 {
     public class ClientesController : Controller
     {
-        private readonly IClientesRepository _clientesRepository;
+        private readonly IClientesServices _clientesServices;
         private readonly IMapper _mapper;
-        public ClientesController(IClientesRepository clientesRepository, IMapper mapper)
+        public ClientesController(IClientesServices clientesServices, IMapper mapper)
         {
             _mapper = mapper;
-            _clientesRepository = clientesRepository;
+            _clientesServices = clientesServices;
         }
         public IActionResult Index()
         {
@@ -32,7 +33,7 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
             if (ModelState.IsValid)
                 return View("CadastrarCliente", cliente);
             var clienteModel = _mapper.Map<ClienteViewModel, Cliente>(cliente);
-            _clientesRepository.CadastrarNovoCliente(clienteModel);
+            _clientesServices.Novo(clienteModel);
 
             return View("CadastrarCliente", null);
         }

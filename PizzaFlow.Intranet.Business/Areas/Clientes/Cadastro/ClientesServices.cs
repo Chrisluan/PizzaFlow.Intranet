@@ -14,31 +14,28 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
     {
         private readonly IClientesRepository dataRepository;
         public ClientesServices() { }
-        public void CadastrarNovoCliente(Cliente cliente)
+
+        public void Atualizar(Cliente cliente)
         {
+            throw new NotImplementedException();
+        }
+
+        public void Excluir(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Novo(Cliente cliente)
+        {
+            if(cliente == null) throw new ArgumentNullException(nameof(cliente));
+            ValidarCliente.ValidarCompleto(cliente);
+
             dataRepository.CadastrarNovoCliente(cliente);
-           
         }
 
-        public bool Deletar(int id)
+        public IQueryable RetornarTodos()
         {
             throw new NotImplementedException();
         }
-
-        public IEnumerable<Pedido> PegarHistoricoDePedidoPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Cliente? ProcurarClientePorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Cliente> RetornarTodos(int inicio = 0, int? maximo = 0)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
