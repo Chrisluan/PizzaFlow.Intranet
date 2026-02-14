@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using System;
+using PizzaFlow.Intranet.ViewModels.Attributes;
 using System.Linq.Expressions;
 
 namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
@@ -10,7 +10,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
     {
         public static IHtmlContent InputFor<TModel, TValue>(
             this IHtmlHelper<TModel> html,
-            Expression<Func<TModel, TValue>> expression)
+            Expression<Func<TModel, TValue>> expression, string? mask = "")
         {
           
             var provider = new ModelExpressionProvider(html.MetadataProvider);
@@ -23,7 +23,13 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
             var fieldName = modelExpression.Name;
             var metadata = modelExpression.Metadata;
             var displayName = metadata.DisplayName ?? metadata.PropertyName ?? fieldName;
+            var maskAttribute = metadata
+                .ContainerType?
+                .GetProperty(metadata.PropertyName)?
+                .GetCustomAttributes(typeof(MaskAttribute), false)
+                .FirstOrDefault() as MaskAttribute;
 
+            var maskValue = maskAttribute?.Pattern;
             var hasError =
                 html.ViewData.ModelState.TryGetValue(fieldName, out var entry) &&
                 entry.Errors.Count > 0;
@@ -67,13 +73,17 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
                     break;
             }
 
+            var attributes = new Dictionary<string, object>
+            {
 
-                input = html.TextBoxFor(expression, new
-                {
+                ["type"] = type,
+                ["class"] = hasError ? "form-control is-invalid" : "form-control"
+                
+            };
 
-                    type = type,
-                    @class = hasError ? "form-control is-invalid" : "form-control"
-                });
+            if(maskValue != null) attributes.Add("data-mask", maskValue);
+
+            input = html.TextBoxFor(expression, attributes);
          
 
             wrapper.InnerHtml.AppendHtml(label);

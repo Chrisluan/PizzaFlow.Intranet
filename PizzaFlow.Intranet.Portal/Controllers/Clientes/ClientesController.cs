@@ -22,7 +22,13 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
         {
             return View();
         }
+        public IActionResult Cadastrados()
+        {
+            List<Cliente> todos = _clientesServices.RetornarTodos().Take(100).ToList();
+            var todosMapeados = _mapper.Map<List<Cliente>, List<ClienteViewModel>>(todos);
 
+            return View("VisualizarClientes", todosMapeados);
+        }
         public IActionResult Cadastrar() {
 
             return View("CadastrarCliente");
@@ -30,12 +36,15 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
       
         public IActionResult Salvar(ClienteViewModel cliente)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
                 return View("CadastrarCliente", cliente);
+            }
+                
             var clienteModel = _mapper.Map<ClienteViewModel, Cliente>(cliente);
             _clientesServices.Novo(clienteModel);
 
-            return View("CadastrarCliente", null);
+            return Cadastrados();
         }
     }
 }

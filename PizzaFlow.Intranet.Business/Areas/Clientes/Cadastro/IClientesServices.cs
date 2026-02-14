@@ -12,9 +12,10 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
     {
 
         public void Novo(Cliente cliente);
+        public Cliente ProcurarPorId(int id);
         public void Excluir(int id);
         public void Atualizar(Cliente cliente);
-        public IQueryable RetornarTodos();
+        public IQueryable<Cliente> RetornarTodos();
 
     }
 }

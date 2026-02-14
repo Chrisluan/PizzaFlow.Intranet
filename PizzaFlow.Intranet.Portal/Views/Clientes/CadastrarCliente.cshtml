@@ -1,4 +1,5 @@
 ﻿@using PizzaFlow.Intranet.Portal.Extensions.UI.Form
+@using PizzaFlow.Intranet.Portal.Extensions.UI.Grid
 @model PizzaFlow.Intranet.ViewModels.Clientes.ClienteViewModel;
 
 @using (Html.BeginFormStyled("Novo cliente", "Salvar", "Clientes", FormMethod.Post))
@@ -10,3 +11,4 @@
     @Html.InputFor(m => m.Endereco)
    
 }
+

@@ -3,6 +3,7 @@ using PizzaFlow.Intranet.Models.Clientes;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using PizzaFlow.Intranet.ViewModels.Attributes;
 
 
 namespace PizzaFlow.Intranet.ViewModels.Clientes
@@ -17,6 +18,7 @@ namespace PizzaFlow.Intranet.ViewModels.Clientes
 
         [DisplayName("Numero de Telefone")]
         [Required]
+        [Mask("(00) 00000-0000")]
         public string NumeroTelefone { get; set; }
 
         [DisplayName("Aniversário")]

@@ -1,23 +1,25 @@
-﻿using PizzaFlow.Intranet.Business.PizzaFlowBase.Repository.Interfaces;
-using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
+﻿using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Models.Clientes;
-using PizzaFlow.Intranet.Models.Pedidos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
 {
     public class ClientesServices : IClientesServices
     {
-        private readonly IClientesRepository dataRepository;
-        public ClientesServices() { }
+        private readonly IClientesRepository _clienteRepository;
+        public ClientesServices(IClientesRepository clientesRepository) {
+            _clienteRepository = clientesRepository;
+        }
 
         public void Atualizar(Cliente cliente)
         {
             throw new NotImplementedException();
+        }
+
+        public Cliente ProcurarPorId(int id)
+        {
+            Cliente? clienteEncontrado = _clienteRepository.ProcurarClientePorId(id);
+            ValidarCliente.ValidarCompleto(clienteEncontrado); 
+            return clienteEncontrado;
         }
 
         public void Excluir(int id)
@@ -30,12 +32,13 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
             if(cliente == null) throw new ArgumentNullException(nameof(cliente));
             ValidarCliente.ValidarCompleto(cliente);
 
-            dataRepository.CadastrarNovoCliente(cliente);
+            _clienteRepository.CadastrarNovoCliente(cliente);
         }
 
-        public IQueryable RetornarTodos()
+        public IQueryable<Cliente> RetornarTodos()
         {
-            throw new NotImplementedException();
+            
+            return _clienteRepository.QueryClientes();
         }
     }
 }

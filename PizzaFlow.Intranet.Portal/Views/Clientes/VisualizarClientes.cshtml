@@ -1,0 +1,5 @@
+﻿@model List<ClienteViewModel>
+@using PizzaFlow.Intranet.Portal.Extensions.UI.Grid
+@using PizzaFlow.Intranet.ViewModels.Clientes
+
+@Html.ShowGridFor(Model, x => x.Id)

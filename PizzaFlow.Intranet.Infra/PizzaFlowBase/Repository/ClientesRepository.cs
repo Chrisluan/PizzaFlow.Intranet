@@ -8,8 +8,7 @@ public class ClientesRepository : IClientesRepository
     private readonly IDataRepository<Cliente> clienteDataRepository;
 
     public ClientesRepository(
-        IDataRepository<Cliente> clienteDataRepository,
-        IDataRepository<Pedido> pedidoDataRepository)
+        IDataRepository<Cliente> clienteDataRepository)
     {
         this.clienteDataRepository = clienteDataRepository;
     }

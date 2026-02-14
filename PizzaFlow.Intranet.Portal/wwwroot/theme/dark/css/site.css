@@ -31,6 +31,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-family-base);
+
 }
 
 body {
@@ -38,6 +39,7 @@ body {
     background-color: var(--color-bg);
     color: var(--color-text);
     min-height: 100vh;
+
     font-size: var(--font-size-base);
 }
 .container {

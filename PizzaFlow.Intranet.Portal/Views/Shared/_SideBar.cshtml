@@ -18,10 +18,11 @@
 
     menu.Categoria("Gestão", "fa fa-pizza-slice")
         .Item("Clientes", "fa fa-user")
-            .Sub("Cadastrar", "Clientes", "Cadastrar", "fa fa-plus")
-            .VaiPara("Clientes", "Index")
+            .Sub("Cadastrar", "Clientes", "cadastrar", "fa fa-plus")
+            .Sub("Listar", "Clientes", "cadastrados", "fa-solid fa-table-list")
+        .VaiPara("", "")
         .Item("Insumos", "fa fa-box")
-            .Sub("Cadastrar", "Insumos", "Cadastrar", "fa fa-plus")
+            .Sub("Cadastrar", "Insumos", "cadastrar", "fa fa-plus")
         .Sub("Listar", "Produtos", "Index", "fa-solid fa-table-list");
     })
 
