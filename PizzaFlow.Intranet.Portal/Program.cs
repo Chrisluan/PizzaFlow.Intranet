@@ -1,12 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using PizzaFlow.Intranet.Business;
 using PizzaFlow.Intranet.Infra;
-using System;
+using NToastNotify;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 
-
+builder.Services.AddControllersWithViews()
+    .AddNToastNotifyToastr(new ToastrOptions
+    {
+        ProgressBar = true,
+        PositionClass = ToastPositions.TopRight
+    });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -21,6 +27,7 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
 var app = builder.Build();
+app.UseNToastNotify();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

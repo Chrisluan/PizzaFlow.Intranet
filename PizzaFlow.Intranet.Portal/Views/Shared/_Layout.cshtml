@@ -36,12 +36,15 @@
         <div class="side-bar" id="side-bar">
             <partial name="_SideBar"></partial>
         </div>
-
+        
         <main class="content">
             @RenderBody()
+
         </main>
+
     </div>
     
-    
+    @await Component.InvokeAsync("NToastNotify")
+
 </body>
 </html>

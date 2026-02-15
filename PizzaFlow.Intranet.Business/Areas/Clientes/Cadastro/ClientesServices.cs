@@ -1,4 +1,5 @@
-﻿using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
+﻿using NHibernate.Criterion;
+using PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces;
 using PizzaFlow.Intranet.Models.Clientes;
 
 namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
@@ -12,7 +13,8 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
 
         public void Atualizar(Cliente cliente)
         {
-            throw new NotImplementedException();
+            ValidarCliente.ValidarCompleto(cliente);
+            _clienteRepository.AtualizarCliente(cliente);
         }
 
         public Cliente ProcurarPorId(int id)

@@ -2,13 +2,15 @@
 @using PizzaFlow.Intranet.Portal.Extensions.UI.Grid
 @model PizzaFlow.Intranet.ViewModels.Clientes.ClienteViewModel;
 
-@using (Html.BeginFormStyled("Novo cliente", "Salvar", "Clientes", FormMethod.Post))
+@using (Html.BeginFormStyled($"Editando Cliente {Model.Nome}", "ConfirmarEdicao", "Clientes", FormMethod.Post))
 {
-    
+
+
+    @Html.HiddenFor(m => m.Id)
     @Html.InputFor(m => m.Nome)
     @Html.InputFor(m => m.NumeroTelefone)
     @Html.InputFor(m => m.DataNascimento)
     @Html.InputFor(m => m.Endereco)
-   
+
 }
 

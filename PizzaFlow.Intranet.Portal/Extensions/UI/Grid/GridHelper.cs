@@ -31,8 +31,6 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Grid
                 @$"
                     <h1 class=""title"">Clientes Cadastrados</h1>
                     <div class=""form-styled-body"">
-                    
-                    
                 "
 
             );

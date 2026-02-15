@@ -8,8 +8,9 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
 {
     public static class InputForHelper
     {
-        public static IHtmlContent InputFor<TModel, TValue>(
-            this IHtmlHelper<TModel> html,
+        public static FormField InputFor<TModel, TValue>
+ (
+             this IHtmlHelper<TModel> html,
             Expression<Func<TModel, TValue>> expression, string? mask = "")
         {
           
@@ -50,9 +51,6 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
 
             var underlyingType = Nullable.GetUnderlyingType(modelType) ?? modelType;
 
-            var isDateTime = underlyingType == typeof(DateTime);
-
-
             IHtmlContent input;
             string type = "";
 
@@ -83,8 +81,18 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
 
             if(maskValue != null) attributes.Add("data-mask", maskValue);
 
-            input = html.TextBoxFor(expression, attributes);
-         
+            if (underlyingType == typeof(DateTime))
+            {
+                input = html.TextBoxFor(
+                    expression,
+                    "{0:yyyy-MM-dd}",
+                    attributes
+                );
+            }
+            else
+            {
+                input = html.TextBoxFor(expression, attributes);
+            }
 
             wrapper.InnerHtml.AppendHtml(label);
             wrapper.InnerHtml.AppendHtml(input);
@@ -98,7 +106,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
                 wrapper.InnerHtml.AppendHtml(error);
             }
 
-            return wrapper;
+            return new FormField(wrapper);
         }
     }
 }

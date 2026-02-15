@@ -11,6 +11,9 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes
         {
             if (String.IsNullOrEmpty(numeroTelefone))
                 throw new BusinessException("Número de telefone fora do padrão");
+
+            if (!Regex.IsMatch(numeroTelefone, "^\\(\\d{2}\\)\\s\\d{5}-\\d{4}$"))
+                throw new BusinessException("Telefone deve estar no formato (00) 00000-0000");
         }
         
         public static void ValidarCompleto(Cliente? cliente)
@@ -23,7 +26,7 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes
         public static void ValidarNome(string nome) {
             if (nome.IsNullOrEmpty())
                 throw new BusinessException("O campo Nome precisa ser preenchido.");
-            if (!nome.All(char.IsAscii))
+            if (!nome.ToLower().All(char.IsLetter))
                 throw new BusinessException("Nomes podem conter apenas letras.");
         }
     }

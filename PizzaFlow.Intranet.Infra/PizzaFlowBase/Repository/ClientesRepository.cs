@@ -24,6 +24,13 @@ public class ClientesRepository : IClientesRepository
         clienteDataRepository.SaveChanges();
     }
 
+
+    public void AtualizarCliente(Cliente cliente)
+    {
+        clienteDataRepository.Update(cliente);
+        clienteDataRepository.SaveChanges();
+    }
+
     public bool Deletar(int id)
     {
         var cliente = clienteDataRepository.GetById(id);

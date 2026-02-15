@@ -7,6 +7,7 @@ namespace PizzaFlow.Intranet.Infra.PizzaFlowBase.Repository.Interfaces
     {
         Cliente? ProcurarClientePorId(int id);
         IQueryable<Cliente> QueryClientes();
+        void AtualizarCliente(Cliente cliente);
         void CadastrarNovoCliente(Cliente cliente);
         bool Deletar(int id);
         
