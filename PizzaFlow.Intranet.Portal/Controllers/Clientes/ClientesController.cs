@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using NToastNotify;
 using PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro;
 using PizzaFlow.Intranet.Models.Clientes;
@@ -24,9 +25,22 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
         }
         public IActionResult Cadastrados()
         {
-            List<Cliente> todos = _clientesServices.RetornarTodos().Take(100).ToList();
-            var todosMapeados = _mapper.Map<List<Cliente>, List<ClienteViewModel>>(todos);
-            return View("VisualizarClientes", todosMapeados);
+            try
+            {
+                List<Cliente> todos = _clientesServices.RetornarTodos().Take(100).ToList();
+                var todosMapeados = _mapper.Map<List<Cliente>, List<ClienteViewModel>>(todos);
+                return View("VisualizarClientes", todosMapeados);
+            }
+            catch (Exception ex) {
+                if (ex.GetType() == typeof(SqlException)) {
+                    _toastNotification.AddSuccessToastMessage(ex.Message, new ToastrOptions
+                    {
+                        Title = "Erro no Banco de dados"
+                    });
+                }
+                return View("Home");
+
+            } 
         }
         public IActionResult Cadastrar() {
 
@@ -49,7 +63,6 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
                     Title = "Sucesso"
                 });
                 return RedirectToAction("Cadastrados");
-
             }
             catch (Exception e)
             {

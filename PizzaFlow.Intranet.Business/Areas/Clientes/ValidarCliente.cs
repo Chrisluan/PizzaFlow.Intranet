@@ -26,8 +26,10 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes
         public static void ValidarNome(string nome) {
             if (nome.IsNullOrEmpty())
                 throw new BusinessException("O campo Nome precisa ser preenchido.");
-            if (!nome.ToLower().All(char.IsLetter))
+            if (!nome.ToLower().All(c => char.IsLetter(c) || char.IsWhiteSpace(c)))
                 throw new BusinessException("Nomes podem conter apenas letras.");
+            if (nome.Length < 3)
+                throw new BusinessException("Mínimo de 3 letras para nomes.");
         }
     }
 }

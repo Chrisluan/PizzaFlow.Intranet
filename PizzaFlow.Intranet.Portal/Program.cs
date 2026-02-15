@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews()
     .AddNToastNotifyToastr(new ToastrOptions
     {
         ProgressBar = true,
-        PositionClass = ToastPositions.TopRight
+        PositionClass = ToastPositions.BottomRight
     });
 
 // Add services to the container.

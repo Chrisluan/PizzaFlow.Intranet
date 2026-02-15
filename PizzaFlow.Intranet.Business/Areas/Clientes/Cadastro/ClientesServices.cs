@@ -14,13 +14,13 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
         public void Atualizar(Cliente cliente)
         {
             ValidarCliente.ValidarCompleto(cliente);
+
             _clienteRepository.AtualizarCliente(cliente);
         }
 
         public Cliente ProcurarPorId(int id)
         {
             Cliente? clienteEncontrado = _clienteRepository.ProcurarClientePorId(id);
-            ValidarCliente.ValidarCompleto(clienteEncontrado); 
             return clienteEncontrado;
         }
 

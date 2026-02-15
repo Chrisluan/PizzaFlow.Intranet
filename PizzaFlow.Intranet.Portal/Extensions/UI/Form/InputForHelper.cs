@@ -101,7 +101,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
             {
                 var error = new TagBuilder("span");
                 error.AddCssClass("text-danger");
-                error.InnerHtml.Append($"O valor não é válido{entry.Errors[0].ErrorMessage}");
+                error.InnerHtml.Append($"O valor não é válido");
 
                 wrapper.InnerHtml.AppendHtml(error);
             }

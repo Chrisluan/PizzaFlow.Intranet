@@ -203,3 +203,7 @@ a:hover {
   border-radius: 5px !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
 }
+.text-danger {
+   top:20px;
+    color:var(--color-error)
+}

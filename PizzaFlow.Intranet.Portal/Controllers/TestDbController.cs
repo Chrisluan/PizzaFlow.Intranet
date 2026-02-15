@@ -20,13 +20,13 @@ namespace PizzaFlow.Intranet.Portal.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
-            var podeConectar = await _context.Database.CanConnectAsync();
+            var podeConectar = _context.Database.CanConnectAsync();
             return Ok(new { conectado = podeConectar });
         }
         [HttpGet("pegarcliente")]
-        public async Task<IActionResult> GetUsersList(int inicio, int max)
+        public IActionResult GetUsersList(int inicio, int max)
         {
             var cliente = clientesRepository.QueryClientes().Skip(inicio).Take(max).ToList();
             return Ok(new {cliente});
