@@ -101,10 +101,27 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Clientes
                     {
                         Title = "Erro ao atualizar o cliente"
                     });
+                return RedirectToAction("Editar", cliente);
             }
-            
-            
             return RedirectToAction("Cadastrados");
+        }
+
+        public IActionResult Excluir(int id)
+        {
+            try
+            {
+                _clientesServices.Excluir(id);
+                return RedirectToAction("Cadastrados");
+            }catch(Exception e)
+            {
+                _toastNotification.AddErrorToastMessage(e.Message, new ToastrOptions
+                {
+                    Title = "Erro ao atualizar o cliente"
+                });
+                return RedirectToAction("Cadastrados");
+            }
+
+
         }
     }
 }

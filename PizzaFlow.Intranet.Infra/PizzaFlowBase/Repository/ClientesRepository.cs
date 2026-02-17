@@ -34,9 +34,6 @@ public class ClientesRepository : IClientesRepository
     public bool Deletar(int id)
     {
         var cliente = clienteDataRepository.GetById(id);
-        if (cliente == null)
-            return false;
-
         clienteDataRepository.Delete(cliente);
         clienteDataRepository.SaveChanges();
 

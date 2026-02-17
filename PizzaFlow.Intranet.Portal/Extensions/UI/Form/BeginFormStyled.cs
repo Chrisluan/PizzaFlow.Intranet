@@ -10,6 +10,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
             string action,
             string controller,
             FormMethod method = FormMethod.Post,
+            bool editable = true,
             string cssClass = "form-styled")
         {
             var form = new TagBuilder("form");
@@ -18,7 +19,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
             form.AddCssClass(cssClass);
 
             html.ViewContext.Writer.Write(form.RenderStartTag());
-
+           
             // container visual
             html.ViewContext.Writer.Write(
                 @$"
@@ -27,7 +28,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
                     
                     
                 "
-
+            
             );
 
             return new FormStyledDisposable(html);
@@ -50,7 +51,7 @@ namespace PizzaFlow.Intranet.Portal.Extensions.UI.Form
 
                     <div style=""margin-top: var(--spacing-md); text-align:right"">
                         <button class=""btn-secondary"" type=""button"">Cancelar</button>
-                        <button type=""submit"">Confirmar</button>
+                        <button type=""submit"">Feito!</button>
                     </div>
 
                 </form>

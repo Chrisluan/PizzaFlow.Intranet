@@ -26,7 +26,7 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes.Cadastro
 
         public void Excluir(int id)
         {
-            throw new NotImplementedException();
+            _clienteRepository.Deletar(id);
         }
 
         public void Novo(Cliente cliente)

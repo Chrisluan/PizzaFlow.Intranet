@@ -18,11 +18,20 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes
         
         public static void ValidarCompleto(Cliente? cliente)
         {
-            if (cliente == null) throw new NullReferenceException($"Objeto {typeof(Cliente)} nulo.");
+            if (cliente == null) throw new NullReferenceException($"Input {typeof(Cliente)} nulo.");
             ValidarNumeroTelefone(cliente.NumeroTelefone);
             ValidarNome(cliente.Nome);
         }
         
+
+        public static void ValidarEndereco(string? endereco)
+        {
+            if (endereco != null)
+            {
+                if (endereco.Length > 100)
+                    throw new BusinessException("Endereço não pode ter mais de 80 caracteres");
+            }
+        }
         public static void ValidarNome(string nome) {
             if (nome.IsNullOrEmpty())
                 throw new BusinessException("O campo Nome precisa ser preenchido.");
@@ -30,6 +39,8 @@ namespace PizzaFlow.Intranet.Business.Areas.Clientes
                 throw new BusinessException("Nomes podem conter apenas letras.");
             if (nome.Length < 3)
                 throw new BusinessException("Mínimo de 3 letras para nomes.");
+            if (nome.Length > 50)
+                throw new BusinessException("Máximo de 50 letras para nomes");
         }
     }
 }
