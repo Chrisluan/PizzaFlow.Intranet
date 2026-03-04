@@ -34,11 +34,6 @@ namespace PizzaFlow.Intranet.Infra.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Handle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")

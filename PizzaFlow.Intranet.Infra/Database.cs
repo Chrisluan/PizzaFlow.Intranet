@@ -11,6 +11,7 @@ namespace PizzaFlow.Intranet.Infra
         public Database(DbContextOptions<Database> options) : base(options){}
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Insumo> Insumos { get; set; }
         
     }
 }

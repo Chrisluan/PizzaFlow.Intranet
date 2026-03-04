@@ -1,10 +1,11 @@
+using System.Runtime.InteropServices;
 using Microsoft.EntityFrameworkCore;
 using PizzaFlow.Intranet.Business;
 using PizzaFlow.Intranet.Infra;
 using NToastNotify;
 
 var builder = WebApplication.CreateBuilder(args);
-
+string? currentConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
 builder.Services.AddControllersWithViews()
@@ -13,12 +14,13 @@ builder.Services.AddControllersWithViews()
         ProgressBar = true,
         PositionClass = ToastPositions.BottomRight
     });
-
+if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+    currentConnectionString = builder.Configuration.GetConnectionString("DockerConnection");
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Database>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
+        currentConnectionString,
         b => b.MigrationsAssembly("PizzaFlow.Intranet.Infra")
     )
 );

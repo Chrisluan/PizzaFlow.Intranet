@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const mask = input.getAttribute("data-mask");
 
         input.addEventListener("input", function (e) {
-            
-            
-                
+  
             let value = e.target.value.replace(/\D/g, "");
             let masked = "";
             let vi = 0;

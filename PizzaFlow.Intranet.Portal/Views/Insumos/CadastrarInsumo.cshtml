@@ -1,7 +1,7 @@
 ﻿@using PizzaFlow.Intranet.Portal.Extensions.UI.Form
 @model PizzaFlow.Intranet.Models.Produtos.Insumo
 
-@using (Html.BeginFormStyled("Cadastrar Insumo", "", "", FormMethod.Post)){
+@using (Html.BeginFormStyled("Cadastrar Insumo", "Cadastrar", "Insumos", FormMethod.Post)){
     @Html.InputFor(m => m.Nome)
-    @Html.InputFor(m => m.ValorAdicional)
+    @Html.InputFor(m => m.ValorAdicional, "000.00")
 }
