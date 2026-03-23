@@ -13,6 +13,10 @@ namespace PizzaFlow.Intranet.Portal.Controllers.Insumos
         {
             return View("CadastrarInsumo");
         }
+        public IActionResult VisualizarInsumos()
+        {
+            return View("VisualizarInsumos");
+        }
         
     }
 }

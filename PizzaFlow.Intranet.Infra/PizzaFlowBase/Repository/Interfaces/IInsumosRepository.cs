@@ -8,5 +8,5 @@ public interface IInsumosRepository
     IQueryable<Insumo> QueryInsumos();
     void AtualizarInsumo(Insumo insumo);
     void CadastrarNovoInsumo(Insumo insumo);
-    bool Deletar(int id);
+    void Deletar(int id);
 }

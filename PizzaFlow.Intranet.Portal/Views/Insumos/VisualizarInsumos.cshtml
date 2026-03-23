@@ -1,0 +1,5 @@
+﻿@using PizzaFlow.Intranet.ViewModels.Insumos
+@using PizzaFlow.Intranet.Portal.Extensions.UI.Grid
+@using PizzaFlow.Intranet.ViewModels.Clientes
+@model List<InsumosViewModel>
+@Html.ShowGridFor(Model, m => m.Id).AddAction("Editar", "Editar", "Clientes", "btn-primary").AddAction("Excluir", "Excluir", "Clientes", "btn-secondary")

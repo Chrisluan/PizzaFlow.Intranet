@@ -1,10 +1,11 @@
 ﻿
 
+using PizzaFlow.Intranet.Models.Commons;
+
 namespace PizzaFlow.Intranet.Models.Clientes
 {
-    public class Cliente
+    public class Cliente : EntityBase
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string NumeroTelefone { get; set; }
         public DateTime? DataNascimento { get; set; }
